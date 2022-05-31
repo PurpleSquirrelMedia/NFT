@@ -44,7 +44,7 @@ export const SalesListView = (props: { collectionMintFilter?: string }) => {
       {!props.collectionMintFilter && (
         <Banner
           src="/main-banner.svg"
-          headingText="The amazing world of Purple Squirrel."
+          headingText="Purple Squirrel."
           subHeadingText="Buy exclusive Purplex NFTs."
           actionComponent={<HowToBuyModal buttonClassName="secondary-btn" />}
           useBannerBg
