@@ -4,7 +4,7 @@
   </a>
 </p>
 
-Metaplex is a protocol built on top of Solana that allows:
+PurpleX is a protocol built on top of Solana that allows:
 
 - **Creating/Minting** Non-Fungible Tokens;
 - **Starting** A variety of auctions for primary/secondary sales;
