@@ -184,3 +184,103 @@ solana airdrop 4 NEW_WALLET_ADDRESS
 ## Reporting security issues
 
 To report a security issue, please follow the guidance on the [SECURITY](.github/SECURITY.md) page.
+
+GPT
+<p align="center">
+  <a href="https://purplex.com">
+    <img alt="PurpleX" src="js/packages/web/public/purplex-logo.png" style="background: black; padding: 10px" width="250" />
+  </a>
+</p>
+PurpleX is a protocol built on top of Solana that facilitates:
+
+Creating/Minting Non-Fungible Tokens (NFTs);
+Initiating various auctions for primary/secondary sales;
+Visualizing NFTs consistently across wallets and applications.
+PurpleX comprises two core elements: an on-chain program and a self-hosted front-end web3 application.
+
+Official PurpleX Docs and Guide
+Explore our documentation at https://docs.purplex.com/
+
+Installation
+Clone the repository and use yarn start for deployment.
+
+bash
+Copy code
+$ git clone https://github.com/purplesquirrelnetwork/purplex.git
+$ cd purplex/js
+$ yarn install && yarn bootstrap && yarn build
+$ yarn start
+Open http://localhost:3000/ to navigate through the deployed application.
+
+Rust Programs
+Rust programs, along with JavaScript bindings for interactivity, will be integrated into this repository soon.
+
+Community
+Connect with us through these channels:
+
+Discord
+@purplex on Twitter
+GitHub Issues
+Protocol
+Non-fungible tokens (NFT)
+PurpleX's NFT standard, part of the Solana Program Library (SPL), is a unique token with a fixed supply of 1 and no decimals. We've extended the basic NFT concept on Solana to include additional metadata such as URI, similar to ERC-721 on Ethereum.
+
+Types of NFTs in PurpleX
+Master Edition
+Master Edition tokens represent both an NFT and metadata that allows creators to control the provenance of prints from the master edition. Rights to create prints are tokenized, and the master edition owner can distribute tokens allowing users to create prints from it. Creators can set a max supply for the master edition, just like a regular mint on Solana.
+
+Print
+Prints are copies of an NFT created from a Master Edition. Each print has an edition number.
+
+Normal NFT
+A Normal NFT represents a non-fungible token and metadata but lacks rights to print. It could be a unique artwork, once sold, appears only in the purchaser's wallet.
+
+Types of Auctions
+PurpleX supports multiple auction types derived from English auctions with parameters like start and end time, and reservation price. Notably, PurpleX introduces the concept of the participation NFT.
+
+Auction Types
+Single Item
+Used for selling normal NFTs, re-selling Prints, and Master Editions (with associated printing rights).
+
+Open Edition
+Offers a Master Edition NFT with no set supply. Every bidder gets a print, as there are no true "winners".
+
+Limited Edition
+Uses a Master Edition NFT to create a set number of prints for auction winners.
+
+Tiered Auction
+Contains a mix of auction types for different prize placements.
+
+Royalties
+PurpleX enables on-chain artist splits, easing collaboration. Each NFT can be minted with configurable royalty payments.
+
+Storefronts
+PurpleX's front-end component allows for customizable storefronts for creators, buyers, and curators of NFTs.
+
+Development
+Testing
+To test changes to a Rust program, follow these steps:
+
+bash
+Copy code
+# Switch to devnet
+solana config set --url devnet
+
+# Build the project
+cd rust
+cargo build-bpf
+
+# Deploy the program to devnet
+solana program deploy ./path/to/the_program.so -u devnet
+
+# Update the program's ID in the code base for testing
+
+# Start the UI
+cd ../js/packages
+yarn && yarn bootstrap
+yarn start
+
+# Visit http://localhost:3000 in incognito mode
+# Create a new wallet, airdrop SOL, and test your changes
+Reporting Security Issues
+Report security issues as per the guidance on the SECURITY page.
